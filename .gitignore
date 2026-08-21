@@ -1,0 +1,34 @@
+# Generated dependencies and caches
+node_modules/
+.cache/
+*.log
+nohup.out
+
+# Local runtime state
+opencode/service.json
+opencode/opencode-notifier-state.json
+opencode/package-lock.json
+opencode/bun.lock
+opendeck/plugins/
+
+# Secrets and environment files
+.env
+.env.*
+*.pem
+*.key
+*.p12
+*.pfx
+*token*
+*secret*
+*password*
+*credential*
+
+# Known private/status scripts should be added only as sanitized examples.
+bin/back_from_lunch.zsh
+bin/go_to_lunch.zsh
+bin/go_to_somewhere.zsh
+bin/take_dog.zsh
+bin/mute_google.sh
+bin/campo
+bin/acres*-ngrok
+bin/audio-toggle

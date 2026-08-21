@@ -1,0 +1,36 @@
+#!/bin/bash
+
+close-stream-controller
+close-midi
+
+if ! ps aux  |rg librepods; then
+  nohup librepods &
+fi
+
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+
+  if [ "$XDG_SESSION_DESKTOP" = "hyprland" ]; then
+    cp $HOME/.config/hypr/la-sala-del-starcraft.conf $HOME/.config/hypr/monitors.conf
+    pkill -SIGUSR2 waybar
+  fi
+else
+
+  $HOME/.screenlayout/la-sala-del-starcraft.sh
+
+  ibus engine xkb:us:intl:eng
+
+  feh --randomize --bg-fill ~/Pictures/wallpapers/
+
+  TV_SCREEN=HDMI-0
+  SECONDARY_MONITOR="eDP-1-1"
+  xset r rate 300 100
+  i3-msg "workspace number 10; move workspace to output $TV_SCREEN;"
+  i3-msg "workspace number 8; move workspace to output $SECONDARY_MONITOR; workspace number 1"
+
+  sed -i 's/font pango:monospace 11/font pango:monospace 17/' /home/i3morhook/.config/i3/config
+  sed -i 's/font pango:monospace 11/font pango:monospace 17/' /home/i3morhook/.config/sway/config
+
+  sed -i 's/ *tray_output .*/        tray_output DP-2/' /home/i3morhook/.config/sway/config
+
+  i3-msg reload
+fi

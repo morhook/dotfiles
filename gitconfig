@@ -1,0 +1,16 @@
+[user]
+	email = cruz@scvsoft.com
+	name = morhook
+[core]
+	excludesFile = /home/i3morhook/.gitignore
+	editor = hx
+[push]
+	autoSetupRemote = true
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[init]
+	defaultBranch = main

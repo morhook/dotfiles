@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+dosbox-x -fs -nopromptfolder -exit $HOME/workspace/cruzkanoid/CRUZKAN.EXE  $HOME/workspace/cruzkanoid

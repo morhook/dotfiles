@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# pkill midi.sh
+
+# if ps aux | grep -v grep | grep aseqdump > /dev/null; then
+#   echo is running;
+#   pkill aseqdump
+
+# fi
+
+systemctl --user stop midi.service
+true

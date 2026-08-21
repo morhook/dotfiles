@@ -1,0 +1,5 @@
+#!/bin/bash
+
+if ! ps aux | rg -v rg | rg -v start-opendeck | rg opendeck > /dev/null; then
+  opendeck
+fi

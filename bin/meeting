@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# force using wayland, and not xwayland, to enable sharing from google chrome
+export XDG_SESSION_TYPE=wayland
+
+if ! ps aux | grep -v grep | grep google-chrome; then
+  nohup google-chrome &
+fi
+
+if ! ps aux | grep -v grep | grep -v mpris | grep obs; then
+  nohup obs --startvirtualcam &
+fi

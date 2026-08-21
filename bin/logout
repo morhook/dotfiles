@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pkill opendeck && close-midi && hyprctl dispatch exit

@@ -1,0 +1,41 @@
+{
+  "plugin": [
+    [
+      "/home/i3morhook/soft/vibe-mode",
+      {
+        "station": "house",
+        "stations": [
+          {
+            "id": "house",
+            "title": "House",
+            "subtitle": "four-on-floor flow",
+            "url": "https://www.youtube.com/watch?v=7MLRfIoSbdY&list=RD7MLRfIoSbdY&start_radio=1",
+            "startSeconds": 412
+          },
+          {
+            "id": "lofi",
+            "title": "LoFi",
+            "subtitle": "Lo Fi chill sounds",
+            "url":"https://www.youtube.com/watch?v=1J4a9cT2lkw&list=RD1J4a9cT2lkw&start_radio=1"
+          },
+          {
+            "id": "jazz",
+            "title": "Jazz",
+            "subtitle": "Jazz for pumping it up more brightly",
+            "url":"https://www.youtube.com/watch?v=oL0eR16-tRs&list=RDoL0eR16-tRs&start_radio=1"
+          },
+          {
+            "id": "doom",
+            "title": "Doom",
+            "subtitle": "For COdIng on a friday afternoon like a madmen",
+            "url": "https://www.youtube.com/watch?v=CR_B0eN0BLE&list=PLtMjmjXz-rg21NJnn2ZGvr4Licxnbw0WQ&start_radio=1",
+            "startSeconds": 0,
+            "playlist": true
+          }
+        ]
+      }
+    ]
+
+
+  ]
+}

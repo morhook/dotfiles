@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if ps aux| rg -v /bin/sh| rg -v restart-waybar | rg -v mediaplayer.py | rg -v rg|  rg waybar; then
+  pkill -SIGUSR2 waybar
+else
+  nohup waybar &
+fi

@@ -1,0 +1,4 @@
+#!/bin/bash
+
+close-stream-controller
+nohup StreamController -b &

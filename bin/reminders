@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+while true; do
+  # gcalcli remind 10 'notify-send -u critical "Google Calendar" "%s"'
+  gcalcli remind 10
+  sleep 60
+done

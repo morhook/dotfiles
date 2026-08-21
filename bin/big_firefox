@@ -1,0 +1,3 @@
+#!/bin/bash
+
+MOZ_ENABLE_WAYLAND=1 GDK_SCALE=2 firefox

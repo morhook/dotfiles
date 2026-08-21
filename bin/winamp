@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# wine $HOME/soft/winamp/winamp.exe
+# has better integration with they XF86 keys, playerctl and the whole audio system
+GDK_BACKEND=x11 audacious

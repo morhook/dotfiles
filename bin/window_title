@@ -1,0 +1,4 @@
+#!/bin/bash
+
+window_t=$(xdotool getactivewindow getwindowname)
+printf '%s\n' "${window_t:0:60}$([[ ${#window_t} -gt 60 ]] && printf '...')"
