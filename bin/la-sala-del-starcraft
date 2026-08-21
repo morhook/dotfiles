@@ -1,6 +1,6 @@
 #!/bin/bash
 
-close-stream-controller
+pkill opendeck
 close-midi
 
 if ! ps aux  |rg librepods; then

@@ -1,3 +1,3 @@
 #/bin/bash
 
-kitty zsh -ic "/home/i3morhook/.local/bin/hx /home/i3morhook/workspace/status/status.md"
+kitty zsh -ic "$HOME/.local/bin/hx $HOME/workspace/status/status.md"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-close-stream-controller
+pkill opendeck
 close-midi
 
 if [ "$XDG_SESSION_TYPE" = "wayland" ]; then

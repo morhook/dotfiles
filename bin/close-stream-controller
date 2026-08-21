@@ -1,9 +1,0 @@
-#!/bin/bash
-
-if ps aux | grep -v grep | grep StreamController > /dev/null; then
-  echo is running;
-  StreamController --close-running
-
-fi
-
-true
