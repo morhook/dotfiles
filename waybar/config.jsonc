@@ -113,6 +113,9 @@
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
+      "icons": {
+        "Slack_status_icon_1": "/usr/share/pixmaps/slack.png"
+      }
     },
     "clock": {
         // "timezone": "America/New_York",
@@ -191,7 +194,7 @@
         "on-click": "swaync-client -t -sw",
         "on-click-right": "swaync-client -d -sw",
         "escape": true
-   },
+   },    
     "power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -246,16 +249,16 @@
     },
     "custom/power": {
         "format" : "⏻ ",
-		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "/home/i3morhook/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"logout": "/home/i3morhook/.local/bin/logout",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
-		}
+    		"tooltip": false,
+    		"menu": "on-click",
+    		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+    		"menu-actions": {
+    			"shutdown": "systemctl poweroff -i",
+    			"reboot": "reboot",
+    			"logout": "$HOME/.local/bin/logout-clean",
+    			"suspend": "systemctl suspend",
+    			"hibernate": "systemctl hibernate"
+    		}
     },
     "custom/weather": {
         "exec": "curl 'wttr.in/BuenosAires?format=1'",
