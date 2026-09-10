@@ -21,7 +21,6 @@ link_path() {
   ln -s "$source" "$target"
 }
 
-link_path "$repo_dir/gitconfig" "$HOME/.gitconfig"
 link_path "$repo_dir/zshrc" "$HOME/.zshrc"
 link_path "$repo_dir/zshenv" "$HOME/.zshenv"
 link_path "$repo_dir/hypr" "$HOME/.config/hypr"
