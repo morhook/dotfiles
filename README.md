@@ -5,7 +5,6 @@ My Linux desktop and CLI configuration.
 This repository intentionally uses a flat layout instead of mirroring `$HOME`:
 
 ```text
-gitconfig  -> ~/.gitconfig
 zshrc      -> ~/.zshrc
 zshenv     -> ~/.zshenv
 hypr/      -> ~/.config/hypr/
