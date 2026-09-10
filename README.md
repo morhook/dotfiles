@@ -11,7 +11,6 @@ hypr/      -> ~/.config/hypr/
 waybar/    -> ~/.config/waybar/
 kitty/     -> ~/.config/kitty/
 opencode/  -> ~/.config/opencode/
-opendeck/  -> ~/.config/opendeck/
 bin/*      -> ~/.local/bin/*
 ```
 
