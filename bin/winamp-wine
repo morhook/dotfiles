@@ -1,0 +1,5 @@
+#!/bin/bash
+
+wine $HOME/soft/winamp/winamp.exe
+
+# for better integration with the XF86 keys, playerctl, etc, use winamp command instead
