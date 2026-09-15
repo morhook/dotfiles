@@ -10,3 +10,4 @@ fi
 if ! ps aux | grep -v grep | grep -v mpris | grep obs; then
   nohup obs --startvirtualcam &
 fi
+  
