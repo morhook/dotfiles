@@ -1,0 +1,45 @@
+#!/bin/sh
+
+start-opendeck
+restart-midi.sh
+
+if ps aux | rg -v rg | rg librepods; then
+  pkill librepods
+fi
+  
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+  SECONDARY_MONITOR="eDP-1"
+else
+  SECONDARY_MONITOR="eDP-1-1"
+  # eDP-1-1 pinned to 60 Hz: avoids 240 Hz / DSC flicker on the internal panel.
+  xrandr --output HDMI-0 --off --output DP-0 --off --output DP-1 --off --output DP-2 --off --output DP-3 --primary --mode 1920x1080 --pos 1920x60 --rotate normal --output DP-4 --off --output eDP-1-1 --mode 1920x1200 --rate 60 --pos 0x0 --rotate normal
+
+  ibus engine xkb:latam::spa
+
+  feh --randomize --bg-fill ~/Pictures/wallpapers/
+  xset r rate 300 100
+fi
+
+
+if [ "$XDG_SESSION_DESKTOP" = "hyprland" ]; then
+  cp $HOME/.config/hypr/home.conf $HOME/.config/hypr/monitors.conf
+  restart-waybar
+
+  hyprctl dispatch focusmonitor eDP-1
+  hyprctl dispatch workspace 10
+  hyprctl dispatch moveworkspacetomonitor 1 DP-2
+else
+  i3-msg "workspace number 10; move workspace to output $SECONDARY_MONITOR; workspace number 1"
+
+
+  sed -i 's/font pango:monospace 17/font pango:monospace 11/' $HOME/.config/i3/config
+  sed -i "s/bindsym \$mod+d exec --no-startup-id dmenu_run -fn 'monospace:size=17'/bindsym \$mod+d exec --no-startup-id dmenu_run -fn 'monospace:size=11'/" $HOME/.config/i3/config
+  sed -i 's/font pango:monospace 17/font pango:monospace 11/' $HOME/.config/sway/config
+  sed -i "s/bindsym \$mod+d exec --no-startup-id dmenu_run -fn 'monospace:size=17'/bindsym \$mod+d exec --no-startup-id dmenu_run -fn 'monospace:size=11'/" $HOME/.config/sway/config
+
+  sed -i 's/ *tray_output .*/        tray_output DP-2/' $HOME/.config/sway/config
+
+  i3-msg reload 
+
+fi
+
