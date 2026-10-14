@@ -165,7 +165,7 @@
     },
     "custom/apt": {
         "exec": "/usr/bin/python3 /usr/lib/update-notifier/apt_check.py 2>&1 | cut -d ';' -f 1 | awk '$1 > 0 { print $1 \" \" }'",
-        "interval": 1800,
+        "interval": 86400,
         "tooltip": false,
         "on-click": "update-manager"
     },
