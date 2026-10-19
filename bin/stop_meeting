@@ -1,0 +1,26 @@
+#!/bin/bash
+
+. $HOME/.oh-my-zsh/custom/obs.zsh
+
+echo "good meeting. now you have to program like there's no tomorrow" | rhvoice.test
+
+if ps aux | grep -v grep | grep google-chrome; then
+  pkill chrome
+fi
+echo "closed chrome" | rhvoice.test
+
+if pgrep -x obs >/dev/null; then
+  echo "closing virtual cam" | rhvoice.test
+  obs-cmd --websocket "obsws://localhost:4455/$OBS_API_KEY" virtual-camera stop
+  echo "closing obs" | rhvoice.test
+
+  obs_addr=$(hyprctl clients -j | jq -r 'first(.[] | select(.class=="com.obsproject.Studio") | .address) // empty')
+  if [ -n "$obs_addr" ]; then
+    hyprctl dispatch closewindow "address:$obs_addr"
+  else
+    echo "oh. obs is not responding via hyprland. what are you using morhook?" | rhvoice.test
+    pkill -TERM -x obs
+  fi
+fi
+
+echo "done. ready FREDDY"  | rhvoice.test

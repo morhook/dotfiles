@@ -32,4 +32,3 @@ bin/mute_google.sh
 bin/campo
 bin/acres*-ngrok
 bin/audio-toggle
-bin/stop_meeting
