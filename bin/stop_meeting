@@ -18,7 +18,7 @@ if pgrep -x obs >/dev/null; then
   if [ -n "$obs_addr" ]; then
     hyprctl dispatch closewindow "address:$obs_addr"
   else
-    echo "oh. obs is not responding via hyprland. what are you using morhook?" | rhvoice.test
+    echo "oh. obs window was not open. cannot close via hyprland. sending a pkill to it" | rhvoice.test
     pkill -TERM -x obs
   fi
 fi
