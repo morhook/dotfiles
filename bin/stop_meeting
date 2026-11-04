@@ -2,7 +2,7 @@
 
 . $HOME/.oh-my-zsh/custom/obs.zsh
 
-echo "good meeting. now you have to program like there's no tomorrow" | rhvoice.test
+echo "good meeting. switching profiles" | rhvoice.test
 
 if ps aux | grep -v grep | grep google-chrome; then
   pkill chrome
@@ -21,6 +21,8 @@ if pgrep -x obs >/dev/null; then
     echo "oh. obs window was not open. cannot close via hyprland. sending a pkill to it" | rhvoice.test
     pkill -TERM -x obs
   fi
+else
+  echo "no OBS open" | rhvoice.test
 fi
 
-echo "done. ready FREDDY"  | rhvoice.test
+echo "clean. now you have to program like there's no tomorrow" | rhvoice.test
