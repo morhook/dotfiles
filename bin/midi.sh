@@ -24,8 +24,8 @@ throttle_volume() {
 	done
 }
 
-aseqdump -p "Q49 MKII" | awk '/Control change         15, controller 7/ {system(sprintf("pactl set-sink-volume @DEFAULT_SINK@ %.2f", $8 / 127))}
-/Control change         15, controller 1/ {print $8/127; fflush()}' | throttle_volume &
+aseqdump -p "Q49 MKII" | awk '/Control change         13, controller 7/ {system(sprintf("pactl set-sink-volume @DEFAULT_SINK@ %.2f", $8 / 127))}
+/Control change         13, controller 1/ {print $8/127; fflush()}' | throttle_volume &
 
 
 aseqdump -p $midi_secondary | awk '/Note off                0, note 93/ {system("playerctl stop")}
