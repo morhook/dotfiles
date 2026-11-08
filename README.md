@@ -11,6 +11,7 @@ hypr/      -> ~/.config/hypr/
 waybar/    -> ~/.config/waybar/
 kitty/     -> ~/.config/kitty/
 opencode/  -> ~/.config/opencode/
+xfce4/labwc  -> ~/.config/xfce4/labwc
 bin/*      -> ~/.local/bin/*
 ```
 

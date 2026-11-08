@@ -27,6 +27,7 @@ link_path "$repo_dir/hypr" "$HOME/.config/hypr"
 link_path "$repo_dir/waybar" "$HOME/.config/waybar"
 link_path "$repo_dir/kitty" "$HOME/.config/kitty"
 link_path "$repo_dir/opencode" "$HOME/.config/opencode"
+link_path "$repo_dir/xfce4/labwc" "$HOME/.config/xfce4/labwc"
 
 mkdir -p "$HOME/.local/bin"
 for executable in "$repo_dir"/bin/*; do
