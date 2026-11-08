@@ -1,0 +1,186 @@
+<?xml version="1.0"?>
+<!--
+  This is a very simple config file with many options missing. For a
+  complete set of options with comments, see Labwc docs/rc.xml.all
+-->
+<labwc_config>
+
+  <placement>
+    <policy>automatic</policy>
+  </placement>
+
+  <theme>
+    <name>Chicago95</name>
+    <cornerRadius>0</cornerRadius>
+    <!-- Match the Chicago95 xfwm4 title font: Sans Bold 8 -->
+    <font place="ActiveWindow">
+      <name>Sans</name>
+      <size>8</size>
+      <weight>bold</weight>
+    </font>
+    <font place="InactiveWindow">
+      <name>Sans</name>
+      <size>8</size>
+      <weight>bold</weight>
+    </font>
+    <font place="MenuHeader">
+      <name>Sans</name>
+      <size>8</size>
+      <weight>bold</weight>
+    </font>
+    <font place="MenuItem">
+      <name>Sans</name>
+      <size>8</size>
+    </font>
+    <font place="OnScreenDisplay">
+      <name>Sans</name>
+      <size>8</size>
+      <weight>bold</weight>
+    </font>
+  </theme>
+
+  <desktops number="1" />
+
+  <keyboard>
+    <!-- <default/> -->
+
+    <!-- SC2 key-state recovery: Super+K clears stuck modifiers / lock keys
+         that break StarCraft II's control-group double-tap "center on unit". -->
+    <!-- <keybind key="W-k"> -->
+      <!-- <action name="Execute" command="/home/morhook/.local/bin/sc2-keyfix.py"/> -->
+    <!-- </keybind> -->
+    <!-- Use a different terminal emulator -->
+    <!-- <keybind key="W-Return"> -->
+      <!-- <action name="Execute" command="xfce4-terminal"/> -->
+    <!-- </keybind> -->
+    <!--
+      Remove a previously defined keybind
+      A shorter alternative is <keybind key="W-F4" />
+    -->
+    <keybind key="W-F4">
+      <action name="None"/>
+    </keybind>
+
+    <keybind key="W-r">
+      <action name="Execute" command="xfce4-appfinder --collapsed" />
+    </keybind>
+    <keybind key="A-F2">
+      <action name="Execute" command="xfce4-appfinder --collapsed" />
+    </keybind>
+
+    <keybind key="C-A-t">
+      <action name="Execute" command="kitty" />
+    </keybind>
+
+    <keybind key="W-Up">
+      <action name="ToggleMaximize" />
+    </keybind>
+
+    <numlock>on</numlock>
+
+    <!--
+       Suggested Xfce key bindings.
+    -->
+    <keybind key="XF86_AudioLowerVolume">
+      <action name="Execute" command="amixer sset Master 5%-" />
+    </keybind>
+    <keybind key="XF86_AudioRaiseVolume">
+      <action name="Execute" command="amixer sset Master 5%+" />
+    </keybind>
+    <keybind key="XF86_AudioMute">
+      <action name="Execute" command="amixer sset Master toggle" />
+    </keybind>
+    <keybind key="A-F4">
+      <action name="Close" />
+      <!-- <action name="Execute" command="xfce4-session-logout" /> -->
+    </keybind>
+    <keybind key="A-Tab">
+      <action name="NextWindow" />
+    </keybind>
+
+    <keybind key="W-S-XF86Assistant">
+      <action name="Execute">
+        <command>xfce4-terminal --command "zsh -ic opencode"</command>
+      </action>
+    </keybind>
+    <keybind key="XF86Launch4">
+      <action name="Execute">
+        <command>kitty sh -c btop</command>
+      </action>
+    </keybind>
+      
+    <keybind key="XF86Sleep">
+      <action name="Execute" command="systemctl suspend" />
+    </keybind>
+    <keybind key="XF86PowerOff">
+      <action name="Execute" command="systemctl poweroff" />
+    </keybind>
+    <keybind key="XF86MonBrightnessUp">
+      <action name="Execute" command="brightnessctl -e4 -n2 set 5%+" />
+    </keybind>
+    <keybind key="XF86MonBrightnessDown">
+      <action name="Execute" command="brightnessctl -e4 -n2 set 5%-" />
+    </keybind>
+  
+    <keybind key="XF86Launch1">
+      <action name="Execute" command="rog-control-center" />
+    </keybind>
+    <keybind key="Super_L" onRelease="yes">
+      <action name="Execute" command="xfce4-popup-applicationsmenu" />
+    </keybind>
+  
+    <keybind key="C-Escape">
+      <action name="Execute" command="xfce4-popup-applicationsmenu" />
+    </keybind>
+  
+    <keybind key="W-bar">
+      <action name="Execute" command="/home/morhook/.asdf/shims/python /home/morhook/workspace/morvox-repo/morvox" />
+    </keybind>
+  
+    <keybind key="W-S-bar">
+      <action name="Execute" command="/home/morhook/.asdf/shims/python /home/morhook/workspace/morvox-repo/morvox --lang=es" />
+    </keybind>
+
+    <keybind key="W-dead_grave">
+      <action name="Execute" command="/home/morhook/.asdf/shims/python /home/morhook/workspace/morvox-repo/morvox" />
+    </keybind>
+  
+    <keybind key="W-S-dead_grave">
+      <action name="Execute" command="/home/morhook/.asdf/shims/python /home/morhook/workspace/morvox-repo/morvox --lang=es" />
+    </keybind>
+
+    <keybind key="W-S-Escape">
+      <action name="Execute" command="/home/morhook/.asdf/shims/python /home/morhook/workspace/morvox-repo/morvox --cancel" />
+    </keybind>
+  
+    <keybind key="Print">
+      <action name="Execute">
+        <command>sh -c 'grim - | wl-copy --type image/png'</command>
+      </action>
+    </keybind>
+    <keybind key="C-S-Print">
+      <action name="Execute">
+        <command>sh -c 'grim -g "$(slurp)" - | wl-copy --type image/png'</command>
+      </action>
+    </keybind>
+    <keybind key="W-1">
+      <action name="GoToDesktop" to="1" />
+    </keybind>
+    <keybind key="W-2">
+      <action name="GoToDesktop" to="2" />
+    </keybind>
+    <keybind key="W-3">
+      <action name="GoToDesktop" to="3" />
+    </keybind>
+    <keybind key="W-4">
+      <action name="GoToDesktop" to="4" />
+    </keybind>
+    <repeatRate>100</repeatRate>
+    <repeatDelay>150</repeatDelay>
+  </keyboard>
+
+  <snapping>
+    <range>10</range>
+  </snapping>
+
+</labwc_config>
