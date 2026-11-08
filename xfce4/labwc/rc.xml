@@ -90,6 +90,18 @@
     <keybind key="XF86_AudioMute">
       <action name="Execute" command="amixer sset Master toggle" />
     </keybind>
+    <keybind key="XF86AudioPlay">
+      <action name="Execute" command="playerctl play-pause" />
+    </keybind>
+    <keybind key="XF86AudioStop">
+      <action name="Execute" command="playerctl stop" />
+    </keybind>
+    <keybind key="XF86AudioNext">
+      <action name="Execute" command="playerctl next" />
+    </keybind>
+    <keybind key="XF86AudioPrev">
+      <action name="Execute" command="playerctl previous" />
+    </keybind>
     <keybind key="A-F4">
       <action name="Close" />
       <!-- <action name="Execute" command="xfce4-session-logout" /> -->
