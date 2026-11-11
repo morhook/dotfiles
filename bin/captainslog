@@ -1,3 +1,5 @@
 #/bin/bash
 
+play $HOME/samples/boatswain-whistle.mp3
+
 /usr/share/code/code $HOME/workspace/acres.code-workspace $HOME/workspace/status/status.md
